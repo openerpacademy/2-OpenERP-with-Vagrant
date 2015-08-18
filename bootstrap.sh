@@ -7,16 +7,16 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 sudo dpkg-reconfigure locales
 
-# Add openerp repository
-echo "deb http://nightly.openerp.com/7.0/nightly/deb/ ./" | sudo tee -a /etc/apt/sources.list
+# Add odoo (originaly openerp) repository
+echo "deb http://nightly.openerp.com/8.0/nightly/deb/ ./" | sudo tee -a /etc/apt/sources.list
 
 # update the sources list
 sudo apt-get update
 
-# Install openerp
-sudo apt-get -y --force-yes install openerp
+# Install odoo
+sudo apt-get -y --force-yes install odoo
 
 # Add the postgres user
-sudo -u postgres createuser --createdb --no-createrole --no-superuser -w openerp
+sudo -u postgres createuser --createdb --no-createrole --no-superuser -w odoo
 
 echo ">>> Complete Install Script"
